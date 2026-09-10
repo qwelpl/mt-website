@@ -240,6 +240,82 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	color: var(--ink);
 }
 
+/* ---------- testimonials ---------- */
+
+.testimonials {
+	padding: 42px 0;
+	background: var(--pine);
+	color: var(--paper-raised);
+}
+
+.testimonial-layout {
+	display: grid;
+	grid-template-columns: 0.75fr 1.25fr;
+	gap: 64px;
+	align-items: center;
+}
+
+.testimonial-intro .kicker { color: #E8C985; }
+.testimonial-intro h2 { color: var(--paper-raised); }
+.testimonial-intro > p:last-child { color: #D1E0D8; max-width: 30ch; }
+
+.testimonial-slider { min-width: 0; }
+.testimonial-track { min-height: 190px; }
+
+.testimonial-slide { animation: testimonial-in 320ms ease both; }
+.testimonial-slide[hidden] { display: none; }
+
+@keyframes testimonial-in {
+	from { opacity: 0; transform: translateX(12px); }
+	to { opacity: 1; transform: translateX(0); }
+}
+
+.testimonial-quote {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+	line-height: 1.25;
+	color: var(--paper-raised);
+	max-width: 34ch;
+}
+
+.testimonial-author {
+	display: flex;
+	gap: 12px;
+	align-items: baseline;
+	margin-top: 24px;
+	color: #E8C985;
+}
+.testimonial-author span { color: #D1E0D8; font-size: 0.9rem; }
+
+.testimonial-controls {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-top: 26px;
+}
+.testimonial-arrow,
+.testimonial-dot {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+.testimonial-arrow {
+	color: var(--paper-raised);
+	font-size: 1.45rem;
+	line-height: 1;
+	padding: 5px;
+}
+.testimonial-dots { display: flex; gap: 8px; }
+.testimonial-dot {
+	width: 8px;
+	height: 8px;
+	padding: 0;
+	border-radius: 50%;
+	background: #6F9B8E;
+}
+.testimonial-dot.is-active { background: #E8C985; transform: scale(1.35); }
+
 /* ---------- philosophy ---------- */
 
 .philosophy {
@@ -421,6 +497,7 @@ address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid v
 	.hero-grid, .philosophy-grid, .service-block, .visit-grid {
 		grid-template-columns: 1fr;
 	}
+	.testimonial-layout { grid-template-columns: 1fr; gap: 28px; }
 	.quote-grid { grid-template-columns: 1fr; }
 	.philosophy-text { padding-left: 20px; }
 
