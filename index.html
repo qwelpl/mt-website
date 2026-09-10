@@ -1,459 +1,338 @@
-/* ---------------------------------------------------------
-   MT Learning Center — design tokens
-   paper #F6F1E4  ink #1B2A33  gold #B8802E  pine #1F5D52  rule #DCD3BC
---------------------------------------------------------- */
-
-:root {
-	--paper: #F6F1E4;
-	--paper-raised: #FCFAF3;
-	--ink: #1B2A33;
-	--ink-soft: #4B5A61;
-	--gold: #B8802E;
-	--pine: #1F5D52;
-	--rule: #DCD3BC;
-	--rule-strong: #C9BC9B;
-
-	--font-display: "Fraunces", Georgia, serif;
-	--font-body: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
-
-	--content-width: 1120px;
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-@media (prefers-reduced-motion: reduce) {
-	html { scroll-behavior: auto; }
-	* { animation: none !important; transition: none !important; }
-}
-
-body {
-	margin: 0;
-	background: var(--paper);
-	color: var(--ink);
-	font-family: var(--font-body);
-	font-size: 17px;
-	line-height: 1.55;
-	-webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3 {
-	font-family: var(--font-display);
-	color: var(--ink);
-	line-height: 1.1;
-	margin: 0 0 0.5em;
-	font-weight: 600;
-}
-
-h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; }
-h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
-h3 { font-size: 1.25rem; font-weight: 600; }
-
-p { margin: 0 0 1em; }
-p:last-child { margin-bottom: 0; }
-
-a { color: var(--pine); }
-a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
-	outline: 3px solid var(--gold);
-	outline-offset: 2px;
-}
-
-.wrap {
-	max-width: var(--content-width);
-	margin: 0 auto;
-	padding: 0 28px;
-}
-
-.skip-link {
-	position: absolute;
-	left: -999px;
-	top: 0;
-	background: var(--ink);
-	color: var(--paper);
-	padding: 10px 16px;
-	z-index: 100;
-}
-.skip-link:focus { left: 12px; top: 12px; }
-
-/* ---------- header ---------- */
-
-.site-header {
-	position: sticky;
-	top: 0;
-	z-index: 20;
-	background: var(--paper);
-	border-bottom: 1px solid var(--rule);
-}
-
-.header-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-top: 14px;
-	padding-bottom: 14px;
-}
-
-.wordmark {
-	font-family: var(--font-display);
-	font-weight: 600;
-	font-size: 1.05rem;
-	line-height: 1.15;
-	color: var(--ink);
-	text-decoration: none;
-}
-
-.site-nav {
-	display: flex;
-	align-items: center;
-	gap: 28px;
-}
-
-.site-nav a {
-	color: var(--ink-soft);
-	text-decoration: none;
-	font-size: 0.95rem;
-}
-.site-nav a:hover { color: var(--pine); }
-
-.nav-phone {
-	color: var(--pine) !important;
-	font-weight: 600;
-	border: 1px solid var(--pine);
-	padding: 6px 14px;
-	border-radius: 3px;
-}
-
-.nav-toggle-input { display: none; }
-.nav-toggle-label {
-	display: none;
-	width: 30px;
-	height: 22px;
-	position: relative;
-	cursor: pointer;
-}
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: var(--ink);
-}
-.nav-toggle-label span { top: 10px; }
-.nav-toggle-label span::before { top: -8px; }
-.nav-toggle-label span::after { top: 8px; }
-
-/* ---------- hero ---------- */
-
-.hero {
-	padding: 64px 0 72px;
-	border-bottom: 1px solid var(--rule);
-}
-
-.hero-grid {
-	display: grid;
-	grid-template-columns: 1.5fr 1fr;
-	gap: 56px;
-	align-items: start;
-}
-
-.kicker {
-	font-family: var(--font-body);
-	color: var(--gold);
-	font-weight: 600;
-	font-size: 0.95rem;
-	margin-bottom: 14px;
-}
-
-.hero-lede {
-	font-size: 1.15rem;
-	color: var(--ink-soft);
-	max-width: 46ch;
-	margin-top: 20px;
-}
-
-.hero-actions {
-	display: flex;
-	gap: 14px;
-	margin-top: 32px;
-	flex-wrap: wrap;
-}
-
-.btn {
-	display: inline-block;
-	padding: 13px 24px;
-	border-radius: 3px;
-	text-decoration: none;
-	font-weight: 600;
-	font-size: 0.98rem;
-	border: 1px solid transparent;
-}
-
-.btn-primary {
-	background: var(--pine);
-	color: var(--paper-raised);
-}
-.btn-primary:hover { background: #17453d; }
-
-.btn-ghost {
-	border-color: var(--ink);
-	color: var(--ink);
-}
-.btn-ghost:hover { background: var(--ink); color: var(--paper-raised); }
-
-.index-card {
-	background: var(--paper-raised);
-	border: 1px solid var(--rule-strong);
-	border-radius: 2px;
-	padding: 28px 26px;
-	box-shadow: 4px 4px 0 var(--rule);
-}
-
-.index-card-label {
-	font-family: var(--font-display);
-	font-style: italic;
-	color: var(--ink-soft);
-	font-size: 0.95rem;
-	margin: 0 0 16px;
-	padding-bottom: 12px;
-	border-bottom: 1px dashed var(--rule-strong);
-}
-
-.index-card dl { margin: 0; }
-.index-card dl div {
-	padding: 10px 0;
-	border-bottom: 1px solid var(--rule);
-}
-.index-card dl div:last-child { border-bottom: none; }
-
-.index-card dt {
-	font-size: 0.8rem;
-	color: var(--ink-soft);
-	margin: 0 0 2px;
-}
-.index-card dd {
-	margin: 0;
-	font-weight: 600;
-	color: var(--ink);
-}
-
-/* ---------- philosophy ---------- */
-
-.philosophy {
-	padding: 68px 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.philosophy-grid {
-	display: grid;
-	grid-template-columns: 0.8fr 1.2fr;
-	gap: 48px;
-}
-
-.philosophy-text {
-	border-left: 3px solid var(--gold);
-	padding-left: 28px;
-	color: var(--ink-soft);
-	font-size: 1.08rem;
-}
-
-/* ---------- instructors ---------- */
-
-.instructors {
-	padding: 68px 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.section-lede {
-	color: var(--ink-soft);
-	max-width: 56ch;
-	margin-top: -8px;
-	margin-bottom: 36px;
-}
-
-.roster { border-top: 1px solid var(--rule); }
-
-.roster-row {
-	border-bottom: 1px solid var(--rule);
-}
-
-.roster-row summary {
-	list-style: none;
-	cursor: pointer;
-	display: grid;
-	grid-template-columns: 1.1fr 1.1fr 1.3fr auto;
-	gap: 16px;
-	align-items: baseline;
-	padding: 18px 4px;
-}
-.roster-row summary::-webkit-details-marker { display: none; }
-
-.roster-row summary::after {
-	content: "+";
-	font-family: var(--font-display);
-	font-size: 1.3rem;
-	color: var(--gold);
-	justify-self: end;
-}
-.roster-row[open] summary::after { content: "–"; }
-
-.roster-name {
-	font-family: var(--font-display);
-	font-weight: 600;
-	font-size: 1.08rem;
-}
-
-.roster-subject { color: var(--pine); font-size: 0.95rem; }
-.roster-credential { color: var(--ink-soft); font-size: 0.9rem; }
-
-.roster-row p {
-	padding: 0 4px 22px;
-	max-width: 68ch;
-	color: var(--ink-soft);
-}
-
-/* ---------- services ---------- */
-
-.services {
-	padding: 68px 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.service-block {
-	display: grid;
-	grid-template-columns: 0.8fr 1.2fr;
-	gap: 32px;
-	padding: 32px 0;
-	border-top: 1px solid var(--rule);
-}
-.service-block:last-child { border-bottom: none; }
-
-.service-sub { color: var(--gold); font-size: 0.95rem; margin-top: 6px; }
-
-.service-body p { color: var(--ink-soft); }
-
-/* ---------- results ---------- */
-
-.results {
-	padding: 68px 0;
-	border-bottom: 1px solid var(--rule);
-}
-
-.quote-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 32px;
-	margin-top: 32px;
-}
-
-.quote-grid blockquote {
-	margin: 0;
-	padding-top: 18px;
-	border-top: 3px solid var(--gold);
-}
-
-.quote-grid p {
-	font-family: var(--font-display);
-	font-size: 1.15rem;
-	color: var(--ink);
-	margin-bottom: 14px;
-}
-
-.quote-grid cite {
-	font-style: normal;
-	color: var(--ink-soft);
-	font-size: 0.9rem;
-}
-
-/* ---------- visit ---------- */
-
-.visit { padding: 68px 0 76px; }
-
-.visit-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 48px;
-}
-
-.visit-lede { color: var(--ink-soft); max-width: 46ch; }
-
-address {
-	font-style: normal;
-	margin-top: 24px;
-	line-height: 1.9;
-}
-address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
-
-.visit-links {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 24px;
-}
-
-.visit-links h3 { font-size: 1rem; margin-bottom: 12px; }
-.visit-links ul { list-style: none; margin: 0; padding: 0; }
-.visit-links li { margin-bottom: 8px; }
-.visit-links a { color: var(--ink-soft); text-decoration: none; }
-.visit-links a:hover { color: var(--pine); }
-
-/* ---------- footer ---------- */
-
-.site-footer {
-	background: var(--ink);
-	color: #B9C2C6;
-	padding: 22px 0;
-	font-size: 0.85rem;
-}
-.footer-row {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 8px;
-}
-.footer-row p { margin: 0; }
-
-/* ---------- responsive ---------- */
-
-@media (max-width: 900px) {
-	.hero-grid, .philosophy-grid, .service-block, .visit-grid {
-		grid-template-columns: 1fr;
-	}
-	.quote-grid { grid-template-columns: 1fr; }
-	.philosophy-text { padding-left: 20px; }
-
-	.nav-toggle-label { display: block; }
-
-	.site-nav {
-		display: none;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 4px;
-		position: absolute;
-		top: 100%;
-		left: 0;
-		right: 0;
-		background: var(--paper);
-		border-bottom: 1px solid var(--rule);
-		padding: 8px 28px 20px;
-	}
-	.nav-toggle-input:checked ~ .site-nav { display: flex; }
-	.site-nav a { padding: 8px 0; width: 100%; }
-	.nav-phone { margin-top: 8px; }
-}
-
-@media (max-width: 600px) {
-	.roster-row summary {
-		grid-template-columns: 1fr auto;
-		grid-template-areas:
-			"name plus"
-			"subject subject"
-			"cred cred";
-	}
-	.roster-name { grid-area: name; }
-	.roster-row summary::after { grid-area: plus; }
-	.roster-subject { grid-area: subject; }
-	.roster-credential { grid-area: cred; }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MT Learning Center — Fremont, CA</title>
+<meta name="description" content="MT Learning Center offers subject tutorials in Math, English, Physics, Biology and Chemistry, as well as test preparation for the SAT and ACT to enhance their performance on standardized tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/script.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+	<div class="wrap header-row">
+		<a class="wordmark" href="#top">MT Learning<br>Center</a>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+		<label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+			<span></span>
+		</label>
+		<nav class="site-nav">
+			<a href="#philosophy">Philosophy</a>
+			<a href="#instructors">Instructors</a>
+			<a href="#services">Services</a>
+			<a href="#results">Results</a>
+			<a href="#visit">Visit</a>
+			<a class="nav-phone" href="tel:5106680801">510-668-0801</a>
+		</nav>
+	</div>
+</header>
+
+<main id="main">
+
+	<section class="hero" id="top">
+		<div class="wrap hero-grid">
+			<div class="hero-copy">
+				<p class="kicker">Fremont, CA · 2001</p>
+				<h1>Every student sits<br>in the front row.</h1>
+				<p class="hero-lede">We divide our learning space into small classrooms so class sizes are manageable: all our students sit in the first row and receive the individual attention they require and deserve.</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="#services">See what we teach</a>
+					<a class="btn btn-ghost" href="tel:5106680801">Call 510-668-0801</a>
+				</div>
+			</div>
+			<aside class="index-card" aria-label="Center facts">
+				<p class="index-card-label">Student file</p>
+				<dl>
+					<div><dt>Founded</dt><dd>2001</dd></div>
+					<div><dt>Location</dt><dd>Single location — Fremont, CA</dd></div>
+					<div><dt>SAT students</dt><dd>400 point improvement on the real test</dd></div>
+					<div><dt>SAT Subject Math II</dt><dd>Half of our students receive a perfect score of 800</dd></div>
+					<div><dt>Classrooms</dt><dd>All our students sit in the first row</dd></div>
+				</dl>
+			</aside>
+		</div>
+	</section>
+
+	<section class="philosophy" id="philosophy">
+		<div class="wrap philosophy-grid">
+			<h2>Our Philosophy</h2>
+			<div class="philosophy-text">
+				<p>Our classes are designed to reflect our philosophy that, in addition to requiring hard work, learning has to be enjoyable. We build a fun, comfortable environment where a friendly relationship exists between students and their peers and instructors to ensure students feel capable of doing their best. We do not just teach our students; we also mentor them. In order for the students to work diligently without complaint, we create a culture in which hard work is a daily routine. When students blend themselves into the culture, they are influenced by their environment to excel and therefore obtain pleasure, and results, from their efforts.</p>
+				<p>We divide our learning space into small classrooms so class sizes are manageable: all our students sit in the first row and receive the individual attention they require and deserve.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="instructors" id="instructors">
+		<div class="wrap">
+			<h2>Meet the instructors</h2>
+			<p class="section-lede">Fifteen teachers, each with a subject they've spent years getting good at explaining. Tap a name to read their background.</p>
+
+			<div class="roster">
+
+				<details class="roster-row" open>
+					<summary>
+						<span class="roster-name">Don Juang</span>
+						<span class="roster-subject">Math, College Counseling</span>
+						<span class="roster-credential">B.S., Taiwan University · Ph.D., University of Iowa</span>
+					</summary>
+					<p>Founder of MT Learning Center, Dr. Juang has been tutoring since he was 17 years old. Author of seven books, his research papers have appeared in the Journal of Management Sciences and in the Journal of Annals of Operations Research. Dr. Juang taught at the University of Iowa for a few years before coming to California. During those years, he received 4 teaching excellence awards from the university for his contribution. Don concentrates on teaching math classes at MT Learning Center. His SAT &amp; SAT II math classes have helped a countless number of students achieve perfect scores of 800. Over the years, his reputation has spread widely, and students come to him from as far as Sacramento, Davis and El Cerrito.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Xinyu Wang</span>
+						<span class="roster-subject">Math</span>
+						<span class="roster-credential">B.A., Tongji University, Shanghai, China</span>
+					</summary>
+					<p>Xinyu currently works as an elementary and junior high school mathematics teacher in the Palo Alto unified school district. She graduated from Tongji University in Shanghai, China, majoring in Mathematics and Applied Mathematics. After that, she worked as a high school mathematics teacher in a high school in Shanghai for 8 years and accumulated rich teaching experience. After coming to the United States, She took many elective courses on American mathematics teaching and teacher management at UCSD, and successfully obtained the California Single Subject Mathematics Teacher Qualification Certificate. With a solid high school mathematics teaching background and a solid foundation in mathematics, her teaching philosophy is to bring these concepts to every student, so that they can find fun and confidence in the world of mathematic.</p>
+					<p>She always adhered to the tutoring principles of "seriousness, patience" and "teaching according to individual needs" to help every student find a learning method that suits him or her and overcome difficulties in mathematics learning. Her tutoring is not limited to solving problems, but also focuses on cultivating students' mathematical thinking and interests, helping them lay a solid foundation in mathematics and grow into confident learners.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Shovanne Juang</span>
+						<span class="roster-subject">College Counseling</span>
+						<span class="roster-credential">B.A. in Economics, minor in Data Science, UCLA</span>
+					</summary>
+					<p>Shovanne graduated from UCLA, where she honed her subject matter expertise in Business Economics, Statistics, and Data Science. She understands the business landscape of accounting, consulting, banking, and technology, with experience in an intersection of all of the above in a technical product management in banking.</p>
+					<p>Shovanne's teaching style is tailored and direct in upskilling students to reach their goals. She is a strong storyteller and understands the value in leveraging a collaborative environment to help students' ideas shine. She will focus on college application/essay consulting and is committed to supporting her students throughout the process. In California, she was accepted to USC (University of Southern California) for the dual Computer Science and Business program under the Viterbi School of Engineering, as well as every single UC school she applied to: UCLA, UC Berkeley, UC San Diego, UC Santa Barbara, and UC Irvine.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Max He</span>
+						<span class="roster-subject">College Counseling</span>
+						<span class="roster-credential">B.A. in English, University of California - Los Angeles (UCLA)</span>
+					</summary>
+					<p>As a native of Fremont, Max brings a deep understanding of the local community and its educational landscape. With an inviting and approachable teaching style, he offers a tailored approach to each student's educational journey, empowering them to express themselves confidently through their writing, especially in the competitive realm of college admissions. Additionally, Max's expertise in literary analysis and critical thinking empowers students to effectively engage with the complex texts encountered in both academic coursework and standardized testing.</p>
+					<p>Max holds a Bachelor's degree in English from the University of California, Los Angeles (UCLA), where his undergraduate thesis was published and recognized with Departmental Honors. With a passion for learning and a drive for excellence, Max aspires to pursue a doctorate in literature, with the goal of contributing to higher education as a scholar and mentor.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Zoeanne Juang</span>
+						<span class="roster-subject">College Counseling</span>
+						<span class="roster-credential">B.S. in Data Science and Machine Learning, Carnegie Mellon University</span>
+					</summary>
+					<p>With years of experience in college admissions counseling, Zoeanne is a trusted advisor to students and families navigating the increasingly competitive application process. She specializes in guiding students to develop compelling, authentic personal essays that effectively communicate their strengths and potential to top-tier institution.</p>
+					<p>She works closely with each student to identify positioning opportunities, refine their narrative, and ensure every component of the application is cohesive and impactful.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Chengjou Liao</span>
+						<span class="roster-subject">Math, Physics, Computer Science &amp; SAT</span>
+						<span class="roster-credential">B.S. and M.S., Electrical and Computer Engineering, Carnegie Mellon University</span>
+					</summary>
+					<p>Chengjou's teaching career began during his college years as a teaching assistant (TA) for a C programming course and later as a graduate TA for electrical engineering math. Since then, he has been devoted to helping students from elementary school to college age to excel in increasingly competitive surroundings. His experience in rigorous academic environments and the computer hardware industry has allowed him to not only help students improve academically, but also to mentor and encourage those students seeking a future in STEM. Today, he is an instructor at MT Learning Center teaching SAT English/Math, all levels of math from middle school Common Core up through differential equations and discrete math, as well as physics and computer science/programming.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Jayant Dharwadkar</span>
+						<span class="roster-subject">Math</span>
+						<span class="roster-credential">Master of Electrical Engineering, University of California, Santa Cruz</span>
+					</summary>
+					<p>Jayant is an Electrical Engineering student at UC Santa Cruz, where he is working towards his Master's degree after completing his Bachelor's in the same field. He has spent the past year tutoring fellow students in pcb design and engineering mathematics, and he enjoys that moment when a concept finally clicks for someone. Jayant has a patient, hands-on approach to teaching and loves breaking down tricky material into steps that actually make sense. Whether you are just getting started with circuits or trying to get ahead in your science and math classes, Jayant is here to help you build real confidence and make learning feel less overwhelming.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Max Cheng</span>
+						<span class="roster-subject">Biology, Chemistry</span>
+						<span class="roster-credential">M.A. in Biotechnology, Johns Hopkins University</span>
+					</summary>
+					<p>Hi! My name is Max and I am an experienced tutor and an educational program manager/creator who has been teaching grades 6-12 for a little over 5 years now. I have tutored hundreds of students and helped them get "A's" in their classes and 5's on their APs. With a MA in Biotechnology from Johns Hopkins and a BS in Neurobiology/Psychology Degree from UC Davis, I am a scientist at heart and I wish to impart the skills and lessons I have learned to the next generation. While I specialize in biology and psychology at the high school level, I have experience teaching a variety of different subjects including Math, Chemistry, English, and even Test Prep.</p>
+					<p>My teaching philosophy is simple. If students enjoy what they are learning, the more I enjoy teaching them and I will challenge them to do better. In biology, this is called a positive feedback loop, where if I teach the students to be better learners, the students can make me a better teacher for them. That's why I love creating interactive activities and games to aid with subject understanding. I take the rote concepts in textbooks and make them easily digestible for those who are looking to improve or those who want to refine their skills.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">David Liu</span>
+						<span class="roster-subject">Math, Physics, Computer Science</span>
+						<span class="roster-credential">M.S. in Computer Science, University of California - San Diego (UCSD)</span>
+					</summary>
+					<p>David Liu is a math and computer science enthusiast who graduated from UC San Diego. David discovered his passion for teaching during high school, where he founded an after school math club dedicated to tutoring and mentoring students, showcasing an early commitment to fostering a love for mathematics. What began as a hobby evolved into a dedicated journey as he continued teaching math in institutions such as Best Friends and MT Learning Center, covering a spectrum of subjects from Algebra to Calculus BC. David brings a unique blend of academic expertise and a genuine enthusiasm for sharing knowledge, making him a valuable addition to our team.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Andrew Xi</span>
+						<span class="roster-subject">Math</span>
+						<span class="roster-credential">B.S. in Statistics and Data Science, University of California - Santa Barbara</span>
+					</summary>
+					<p>Andrew is a dedicated math tutor with a commitment to helping students succeed in their academic pursuits. Possessing a strong foundation in mathematical concepts, he demonstrates the ability to present complex topics in an easy-to-understand manner. Andrew is dedicated to fostering a friendly and engaging learning environment where students can be inspired by the intricacies of math.</p>
+					<p>Andrew's academic achievements include an early graduation with a Bachelor's in Statistics and Data Science from UCSB, accompanied by the Dean's Honors Award. Concurrently, he explores his passion in machine learning and computer vision as a student researcher at UCSB.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Jeff Huang</span>
+						<span class="roster-subject">Math</span>
+						<span class="roster-credential">UC Davis with a double major in Economics and Political Science</span>
+					</summary>
+					<p>Jeff is currently a math teacher in Tennyson High school in Hayward Unified School District. He graduated from UC Davis with a double major in Economics and Political Science. After graduating from Davis he obtained his single subject math teaching credential at CSU: Sacramento and immediately entered the education field at the age of 23.</p>
+					<p>He started tutoring high school students since college and has experience working with students with different ethnic backgrounds and socio-economic statuses. He also worked with WCEO summer camps (Wisdom) teaching 1st to 8th graders in various subjects.</p>
+					<p>Born in Taiwan and raised in Fremont, Jeff has a great understanding of what it is like to be a student in Fremont since he went to high school here. He is also fluent in Mandarin and is a very approachable person.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Shawn Liu</span>
+						<span class="roster-subject">Math, Physics, Computer Science</span>
+						<span class="roster-credential">B.S. in Computer Science, University of California, San Diego</span>
+					</summary>
+					<p>Shawn brings a robust mathematical background spanning Algebra, Geometry, Trigonometry, and Calculus. His teaching journey began in high school as an after-school tutor and continued through college as a course and laboratory assistant. These pivotal roles sparked a lifelong passion for educator mentorship and student development.</p>
+					<p>In his tutoring sessions, Shawn focuses on demystifying complex mathematical concepts while fostering fundamental, cross-disciplinary problem-solving strategies. He strives to build each student's academic confidence, adapt his teaching methods to individual learning styles, and demonstrate how mathematical reasoning applies to real-world challenges. Above all, Shawn believes that effective tutoring requires a blend of deep subject mastery, adaptive pedagogical skills, endless patience, and genuine empathy for every learner.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Nikki Bostwick</span>
+						<span class="roster-subject">English</span>
+						<span class="roster-credential">University of Toronto - Bachelor's Degree · Rotterdam Conservatory - Graduate Studies · Oxford University - Master's Degree · Stanford University - Ph.D.</span>
+					</summary>
+					<p>Nikki teaches English Language Arts (with emphasis on essay writing) and College Planning.</p>
+					<p>Having attended post-secondary institutions in four countries, Nikki is able to advise students on how to prepare for college (in the US and abroad) and help students navigate the college application process.</p>
+					<p>Over decades of pedagogical endeavours, Nikki has developed a thoughtful, individualized approach to teaching. In her Language Arts classes, students learn to critique essays in order to appreciate the confluence of two crucial elements of effective writing: organization of material/ideas in a logical manner, combined with sentence-level clarity. Nikki has created a methodology that is effective in teaching students to plan effectively, write eloquently, and edit objectively.</p>
+					<p>Since each student has unique gifts and challenges, a one-size-fits-all method can never be as effective as an individualized approach. By giving students tools and showing them steps they can follow to identify and address issues they find personally challenging, significant improvement often can be seen in a relatively short time. Nikki is proactive in identifying areas of difficulty and showing students the most efficient strategies that will help them fulfil their potential.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Chloe Yee</span>
+						<span class="roster-subject">Chemistry, Biology, Math</span>
+						<span class="roster-credential">B.S. in Nutrition Science (Nutrition in Public Health), with a minor in Education University of California, Davis (UCD)</span>
+					</summary>
+					<p>Prior to tutoring at MT Learning Center, Chloe found her spark in tutoring for the first time in her biology class at UC Davis by doing simple tasks such as answering questions and providing demonstrations to her peers while also being a student. Chloe went on to further enhance her tutoring skills by volunteering as an official learning assistant for a cellular biology course, equivalent to AP Biology, at UC Davis during her second-year. After falling in love with organic chemistry, she additionally served as a learning assistant for the course and went on to tutor the class for the last two years of college. During her time as a learning assistant, Chloe was able to translate difficult topics into simpler concepts to make it easier for students to understand. Besides Biology and Chemmistry, she also tutored her peers in multiple Math subjects. As a tutor, Chloe knows that every student learns differently and often times will not find the cookie-cutter curriculum presented in schools to be helpful, so she will do her best to curate an effective tutoring session for any student. She was on the Dean's Honor List in multiple quarters when she studies in UC, Davis.</p>
+					<p>Aside from tutoring, Chloe interned as a research assistant with The National Antimicrobial Resistance Monitoring System (NARMS) by following NARMS microbial protocol to provide samples to the FDA to monitor antimicrobial resistance trends. Alongside her laboratory experience, she has worked the UC Davis Health transplant clinic in researching chronic kidney disease in relation to food insecurity through clinical interactions and performing dietary recalls. Currently, Chloe works as a medical assistant and aims to provide as a paraeducator in K-12 schools while preparing for medical school and studying for the MCAT.</p>
+				</details>
+
+				<details class="roster-row">
+					<summary>
+						<span class="roster-name">Irene Chang</span>
+						<span class="roster-subject">Chemistry, Biology, Math</span>
+						<span class="roster-credential">B.S. in Psychobiology, with a double minor in Applied Developmental Psychology and Gerontology, University of California - Los Angeles (UCLA)</span>
+					</summary>
+					<p>Born and raised in Fremont, Irene understands the academic rigor students face and is deeply committed to helping them build confidence in their learning. A Mission San Jose High School alumna, she earned her Bachelor's degree in Psychobiology from UCLA, graduating summa cum laude with Dean's Honors. Irene brings a warm, encouraging, and personalized approach to tutoring, tailoring lesson plans to each student's strengths and goals. By creating a supportive and engaging environment, she helps students feel comfortable asking questions, gaining clarity, and truly enjoying the learning process.</p>
+					<p>At UCLA, Irene demonstrated her passion for mentorship by leading multiple mentorship programs, providing academic resources and emotional support within UCLA's fast-paced environment. Driven by her commitment to service and education, Irene currently works as a Medical Assistant and Clinical Research Assistant at Stanford University.</p>
+				</details>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="services" id="services">
+		<div class="wrap">
+			<h2>What we teach</h2>
+			<p class="section-lede">MT Learning Center offers a wide variety of classes and services to help students thrive in their current and future academic environments, and to ensure they are well-prepared for any academic challenges they may meet. Here we develop our own materials, and provide our own class packets in which some of the information is purposely omitted. All class materials are prepared according to and beyond the requirements of California Standards.</p>
+
+			<div class="service-block">
+				<div class="service-head">
+					<h3>Group &amp; private tutorials</h3>
+					<p class="service-sub">English · Common Core Math</p>
+				</div>
+				<div class="service-body">
+					<p>MT Learning Center's English Program is designed to reinforce and build upon fundamental skills in writing and reading comprehension necessary to academic achievement. All classes will have the following assignments: grammar exercises, vocabulary development, reading, essay composition, reading comprehension questions, preparing for class discussion, outside research to related topics, and in-class quizzes and essays. Periodically, we will send home a sample of students' work so that parents can see some of the assignments we have been doing in class, the progress the students are making, and the areas of weakness that we continually try to strengthen.</p>
+					<p>Our Common Core 7 class is designed to build a solid foundation for Algebra classes. We focus on the basic concepts students will need in the next few years, and provide students with the training required for upper-level math courses. We dedicate a special portion of class time to training students in how to handle word problems, and show them how to transform the necessary written information into algebraic equations. Common Core 8 class continues and reinforce the mathematical concepts in Common Core 7. Besides that, students are trained to "know why" instead of "know how" and "know what" in the class to spark their thinking.</p>
+				</div>
+			</div>
+
+			<div class="service-block">
+				<div class="service-head">
+					<h3>Standardized test prep</h3>
+					<p class="service-sub">SAT · SAT II Math, Chemistry, Biology, Physics</p>
+				</div>
+				<div class="service-body">
+					<p>The SAT is an exam designed to analyze a student's problem solving skills and to measures their literacy, numeracy, and writing skills that are needed for academic success in college. SAT I Math class is designed to establish the key techniques and core concepts required for the real SAT tests. Our experience tells us that most of the SAT test takers commonly lack certain skills, such as word problem analysis techniques. Therefore, we developed a special technique "information box" to help students analyze word problems. Additionally, we review all the math topics covered in SAT I Math chapter by chapter, ensuring students possess enough math background before the real test.</p>
+					<p>Homework, quizzes, and mock tests are given every week in order to track the progress of the students learning as well as to strengthen and apply the skills the student has learned in class. The results of these assessments will be reported to the parent weekly through email.</p>
+					<p>SAT II Math is the most popular and successful SAT class at MT Learning Center. Over the years, we have helped countless students achieve perfect scores in on this SAT subject test. Our homemade material does not just review all the topics covered in the test, but changes according to the newest test trends. We also offer SAT Subject Tests in Chemistry, Biology, and Physics, each a one hour multiple choice test on a full year of college preparatory coursework.</p>
+				</div>
+			</div>
+
+			<div class="service-block">
+				<div class="service-head">
+					<h3>College application services</h3>
+					<p class="service-sub">Essay coaching · one-on-one counseling</p>
+				</div>
+				<div class="service-body">
+					<p>Help place your student in the most positive light and advantageous position with well-polished, thoughtful, standout essays. Most prepared students will require only a few hours' assistance with writing and editing their personal statements for each school. Our knowledgeable college counselors can answer any application questions and ensure your student's essays shine.</p>
+					<p>All UC campuses use the same method of calculating a preliminary grade point average for purposes of determining an applicant's UC eligibility. The GPA is calculated based on all "a-g" subjects completed in grades 10 and 11 including summer sessions by assigning point values to the grades a student earns, totaling the points, and dividing the total by the number of "a-g" course units. Points are assigned as follows: A=4 points, B=3 points, C=2 points, D=1 point and F=0 points.</p>
+					<p>To encourage students to complete their college applications early, we offer the Early Bird discount for one-on-one service. After registration, office staff will contact counselors for the first meeting, and counselors will schedule the first meeting for a day that is within seven (7) business days upon receiving the request. Parents and students can cancel the service and receive a full refund if our counselors fail to set up the appointment within seven business days.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="results" id="results">
+		<div class="wrap">
+			<h2>Twenty years of report cards</h2>
+			<div class="quote-grid">
+				<blockquote>
+					<p>Vyvy graduated from Harker School and is pursuing her MD degree in the 8 years medial program in Brown University. She was admitted to all the UC's including UCLA and UC Berkeley.</p>
+					Vyvy T.
+				</blockquote>
+				<blockquote>
+					<p>Debra graduated from Mission San Jose High School in Fremont and is currently attending the 8 year medical program in Washington University in San Louis. She was admitted to all the UC's including UCLA and UC Berkeley as well as Massachusetts Institute of Technology (MIT).</p>
+					Debra Y.
+				</blockquote>
+				<blockquote>
+					<p>Sharleen graduated from Mission San Jose High School in Fremont, she is currently pursuing a degree in Stanford University. She received 2350 in SAT test with a perfect score in Writing and Math IIC subject.</p>
+					Sharleen T.
+				</blockquote>
+			</div>
+		</div>
+	</section>
+
+	<section class="visit" id="visit">
+		<div class="wrap visit-grid">
+			<div>
+				<h2>Visit or call</h2>
+				<p class="visit-lede">MT Learning Center has released 2026 Fall class schedule. Spaces are strictly limited. Sign up classes today to get a head start in school!</p>
+				<address>
+					46260 Warm Springs Blvd., #505<br>
+					Fremont, CA 94539<br>
+					<a href="tel:5106680801">510-668-0801</a><br>
+					<a href="tel:5103649201">510-364-9201</a>
+				</address>
+			</div>
+			<div class="visit-links">
+				<div>
+					<h3>Useful links</h3>
+					<ul>
+						<li><a href="https://www.collegeboard.org/" target="_blank" rel="noopener">CollegeBoard</a></li>
+						<li><a href="http://www.actstudent.org/" target="_blank" rel="noopener">ACT</a></li>
+						<li><a href="http://apcentral.collegeboard.com/apc/Controller.jpf" target="_blank" rel="noopener">AP Central</a></li>
+					</ul>
+				</div>
+				<div>
+					<h3>College links</h3>
+					<ul>
+						<li><a href="http://www.universityofcalifornia.edu/" target="_blank" rel="noopener">University of California</a></li>
+						<li><a href="http://www.calstate.edu/" target="_blank" rel="noopener">California State University</a></li>
+						<li><a href="http://www.scu.edu/" target="_blank" rel="noopener">Santa Clara University</a></li>
+						<li><a href="http://www.stanford.edu/" target="_blank" rel="noopener">Stanford University</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</main>
+
+<footer class="site-footer">
+	<div class="wrap footer-row">
+		<p>Copyright © 2018 MT Learning Center. All rights reserved.</p>
+		<p class="footer-address">46260 Warm Springs Blvd., #505, Fremont, CA 94539</p>
+	</div>
+</footer>
+
+</body>
+</html>
