@@ -1,321 +1,459 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MT Learning Center — Fremont, CA</title>
-<meta name="description" content="MT Learning Center has tutored Fremont students in math, science, English and test prep since 2001, in small classrooms where every student sits in the front row.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<script src="js/script.js" defer></script>
-</head>
-<body>
+/* ---------------------------------------------------------
+   MT Learning Center — design tokens
+   paper #F6F1E4  ink #1B2A33  gold #B8802E  pine #1F5D52  rule #DCD3BC
+--------------------------------------------------------- */
 
-<a class="skip-link" href="#main">Skip to content</a>
+:root {
+	--paper: #F6F1E4;
+	--paper-raised: #FCFAF3;
+	--ink: #1B2A33;
+	--ink-soft: #4B5A61;
+	--gold: #B8802E;
+	--pine: #1F5D52;
+	--rule: #DCD3BC;
+	--rule-strong: #C9BC9B;
 
-<header class="site-header">
-	<div class="wrap header-row">
-		<a class="wordmark" href="#top">MT Learning<br>Center</a>
-		<input type="checkbox" id="nav-toggle" class="nav-toggle-input">
-		<label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
-			<span></span>
-		</label>
-		<nav class="site-nav">
-			<a href="#philosophy">Philosophy</a>
-			<a href="#instructors">Instructors</a>
-			<a href="#services">Services</a>
-			<a href="#results">Results</a>
-			<a href="#visit">Visit</a>
-			<a class="nav-phone" href="tel:5106680801">510-668-0801</a>
-		</nav>
-	</div>
-</header>
+	--font-display: "Fraunces", Georgia, serif;
+	--font-body: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
 
-<main id="main">
+	--content-width: 1120px;
+}
 
-	<section class="hero" id="top">
-		<div class="wrap hero-grid">
-			<div class="hero-copy">
-				<p class="kicker">Fremont, California · since 2001</p>
-				<h1>Every student sits<br>in the front row.</h1>
-				<p class="hero-lede">MT Learning Center keeps its classrooms small on purpose. Founder Dr. Don Juang started tutoring at seventeen and still teaches the math classes himself — because a student's questions should never get lost in the back row.</p>
-				<div class="hero-actions">
-					<a class="btn btn-primary" href="#services">See what we teach</a>
-					<a class="btn btn-ghost" href="tel:5106680801">Call 510-668-0801</a>
-				</div>
-			</div>
-			<aside class="index-card" aria-label="Center facts">
-				<p class="index-card-label">Student file</p>
-				<dl>
-					<div><dt>Founded</dt><dd>2001, by Dr. Don Juang</dd></div>
-					<div><dt>Location</dt><dd>One classroom in Fremont — no branches</dd></div>
-					<div><dt>Average SAT gain</dt><dd>~400 points, first test to retake</dd></div>
-					<div><dt>SAT II Math II</dt><dd>Half of students score an 800</dd></div>
-					<div><dt>Instructors</dt><dd>15, across math, science, English &amp; admissions</dd></div>
-				</dl>
-			</aside>
-		</div>
-	</section>
+* { box-sizing: border-box; }
 
-	<section class="philosophy" id="philosophy">
-		<div class="wrap philosophy-grid">
-			<h2>Hard work as a daily habit, not a punishment</h2>
-			<div class="philosophy-text">
-				<p>We split our space into small classrooms on purpose — every student sits within arm's reach of the instructor, and gets the individual attention they'd otherwise wait weeks for at a bigger center.</p>
-				<p>We don't think teaching and mentoring are separate jobs. Our instructors build real relationships with students, which makes the daily grind of practice sets and vocabulary drills something students choose to stick with rather than resent. When a classroom's culture treats hard work as normal, the results — and the enjoyment — tend to follow.</p>
-			</div>
-		</div>
-	</section>
+html { scroll-behavior: smooth; }
 
-	<section class="instructors" id="instructors">
-		<div class="wrap">
-			<h2>Meet the instructors</h2>
-			<p class="section-lede">Fifteen teachers, each with a subject they've spent years getting good at explaining. Tap a name to read their background.</p>
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	* { animation: none !important; transition: none !important; }
+}
 
-			<div class="roster">
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: 17px;
+	line-height: 1.55;
+	-webkit-font-smoothing: antialiased;
+}
 
-				<details class="roster-row" open>
-					<summary>
-						<span class="roster-name">Don Juang</span>
-						<span class="roster-subject">Math &amp; College Counseling</span>
-						<span class="roster-credential">Ph.D., University of Iowa</span>
-					</summary>
-					<p>Founder of MT Learning Center. Don has tutored since he was seventeen, written seven books, and published research in the Journal of Management Sciences and the Journal of Annals of Operations Research. He taught at the University of Iowa, earning four teaching-excellence awards, before moving to California. His SAT and SAT II math classes are the reason families drive in from as far as Sacramento, Davis, and El Cerrito.</p>
-				</details>
+h1, h2, h3 {
+	font-family: var(--font-display);
+	color: var(--ink);
+	line-height: 1.1;
+	margin: 0 0 0.5em;
+	font-weight: 600;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Xinyu Wang</span>
-						<span class="roster-subject">Math</span>
-						<span class="roster-credential">B.A., Tongji University, Shanghai</span>
-					</summary>
-					<p>An elementary and junior-high math teacher in the Palo Alto Unified School District, Xinyu taught high school math in Shanghai for eight years before earning her California Single Subject Mathematics credential. She teaches to "seriousness, patience, and individual need" — less about drilling problems, more about building the mathematical thinking that makes the next problem easier.</p>
-				</details>
+h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; }
+h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+h3 { font-size: 1.25rem; font-weight: 600; }
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Shovanne Juang</span>
-						<span class="roster-subject">College Counseling</span>
-						<span class="roster-credential">B.A. Economics, minor Data Science, UCLA</span>
-					</summary>
-					<p>Shovanne's background spans business economics, statistics, and product management in banking. She focuses on college application and essay consulting, coaching students to tell a story that actually sounds like them. She was admitted to every UC she applied to, plus USC's dual CS/Business program.</p>
-				</details>
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Max He</span>
-						<span class="roster-subject">English &amp; College Counseling</span>
-						<span class="roster-credential">B.A. English, UCLA</span>
-					</summary>
-					<p>A Fremont native, Max works one-on-one on the writing that ends up in college applications, plus the literary analysis and critical reading that standardized tests actually test. His undergraduate thesis at UCLA earned Departmental Honors; he's aiming for a doctorate in literature next.</p>
-				</details>
+a { color: var(--pine); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+	outline: 3px solid var(--gold);
+	outline-offset: 2px;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Zoeanne Juang</span>
-						<span class="roster-subject">College Counseling</span>
-						<span class="roster-credential">B.S. Data Science &amp; Machine Learning, Carnegie Mellon</span>
-					</summary>
-					<p>Zoeanne helps students find the personal essay that's actually theirs — specific and honest rather than generic. She works through each part of an application to make sure it reads as one coherent story instead of a checklist.</p>
-				</details>
+.wrap {
+	max-width: var(--content-width);
+	margin: 0 auto;
+	padding: 0 28px;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Chengjou Liao</span>
-						<span class="roster-subject">Math, Physics &amp; Computer Science</span>
-						<span class="roster-credential">M.S. Electrical &amp; Computer Engineering, Carnegie Mellon</span>
-					</summary>
-					<p>Chengjou started teaching as a college TA for a C programming course, then for graduate engineering math. He now covers SAT English and math, everything from Common Core through differential equations, plus physics and programming — informed by time in the computer hardware industry.</p>
-				</details>
+.skip-link {
+	position: absolute;
+	left: -999px;
+	top: 0;
+	background: var(--ink);
+	color: var(--paper);
+	padding: 10px 16px;
+	z-index: 100;
+}
+.skip-link:focus { left: 12px; top: 12px; }
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Jayant Dharwadkar</span>
-						<span class="roster-subject">Math</span>
-						<span class="roster-credential">M.S. Electrical Engineering, UC Santa Cruz</span>
-					</summary>
-					<p>Jayant tutors PCB design and engineering math alongside his own master's work. He breaks tricky material into steps that actually make sense, whether a student is just starting with circuits or trying to get ahead in math and science classes.</p>
-				</details>
+/* ---------- header ---------- */
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Max Cheng</span>
-						<span class="roster-subject">Biology &amp; Chemistry</span>
-						<span class="roster-credential">M.A. Biotechnology, Johns Hopkins</span>
-					</summary>
-					<p>Max has taught grades 6–12 for over five years, mostly biology and psychology, with side experience in math, chemistry, English, and test prep. He builds interactive activities out of textbook material — his read is that better-taught students make him a better teacher in return.</p>
-				</details>
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background: var(--paper);
+	border-bottom: 1px solid var(--rule);
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">David Liu</span>
-						<span class="roster-subject">Math, Physics &amp; Computer Science</span>
-						<span class="roster-credential">M.S. Computer Science, UC San Diego</span>
-					</summary>
-					<p>David founded an after-school math club in high school before he'd even finished being a student himself. He's taught everything from algebra to Calculus BC since, bringing genuine enthusiasm for the subject rather than just the syllabus.</p>
-				</details>
+.header-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Andrew Xi</span>
-						<span class="roster-subject">Math</span>
-						<span class="roster-credential">B.S. Statistics &amp; Data Science, UC Santa Barbara</span>
-					</summary>
-					<p>Andrew graduated early with Dean's Honors from UCSB, and researches machine learning and computer vision alongside his tutoring. He's focused on making complex topics easy to follow without losing the substance.</p>
-				</details>
+.wordmark {
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 1.05rem;
+	line-height: 1.15;
+	color: var(--ink);
+	text-decoration: none;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Jeff Huang</span>
-						<span class="roster-subject">Math</span>
-						<span class="roster-credential">B.A. Economics &amp; Political Science, UC Davis</span>
-					</summary>
-					<p>Jeff currently teaches math at Tennyson High in the Hayward Unified School District. Born in Taiwan and raised in Fremont, he's tutored students of every background since college and is fluent in Mandarin.</p>
-				</details>
+.site-nav {
+	display: flex;
+	align-items: center;
+	gap: 28px;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Shawn Liu</span>
-						<span class="roster-subject">Math, Physics &amp; Computer Science</span>
-						<span class="roster-credential">B.S. Computer Science, UC San Diego</span>
-					</summary>
-					<p>Shawn covers algebra through calculus, having tutored since high school and worked as a course and lab assistant through college. He adapts to how each student learns and connects the math to problems outside the classroom.</p>
-				</details>
+.site-nav a {
+	color: var(--ink-soft);
+	text-decoration: none;
+	font-size: 0.95rem;
+}
+.site-nav a:hover { color: var(--pine); }
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Nikki Bostwick</span>
-						<span class="roster-subject">English &amp; College Planning</span>
-						<span class="roster-credential">Ph.D., Stanford University</span>
-					</summary>
-					<p>Nikki studied at institutions in four countries — Toronto, Rotterdam, Oxford, and Stanford — and advises students on college in the U.S. and abroad. Her essay classes pair logical organization with sentence-level clarity, and her approach is deliberately individualized rather than one-size-fits-all.</p>
-				</details>
+.nav-phone {
+	color: var(--pine) !important;
+	font-weight: 600;
+	border: 1px solid var(--pine);
+	padding: 6px 14px;
+	border-radius: 3px;
+}
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Chloe Yee</span>
-						<span class="roster-subject">Chemistry, Biology &amp; Math</span>
-						<span class="roster-credential">B.S. Nutrition Science, UC Davis</span>
-					</summary>
-					<p>Chloe found her love of teaching as a cellular biology and organic chemistry learning assistant at UC Davis, where she made Dean's Honor List multiple quarters. She's since interned with the FDA's antimicrobial resistance monitoring program and worked in UC Davis Health's transplant clinic.</p>
-				</details>
+.nav-toggle-input { display: none; }
+.nav-toggle-label {
+	display: none;
+	width: 30px;
+	height: 22px;
+	position: relative;
+	cursor: pointer;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--ink);
+}
+.nav-toggle-label span { top: 10px; }
+.nav-toggle-label span::before { top: -8px; }
+.nav-toggle-label span::after { top: 8px; }
 
-				<details class="roster-row">
-					<summary>
-						<span class="roster-name">Irene Chang</span>
-						<span class="roster-subject">Chemistry, Biology &amp; Math</span>
-						<span class="roster-credential">B.S. Psychobiology, UCLA (summa cum laude)</span>
-					</summary>
-					<p>Raised in Fremont and a Mission San Jose High School alum, Irene graduated from UCLA with Dean's Honors. She led mentorship programs on campus and now works as a Medical Assistant and Clinical Research Assistant at Stanford, bringing a warm, tailored approach to every lesson plan.</p>
-				</details>
+/* ---------- hero ---------- */
 
-			</div>
-		</div>
-	</section>
+.hero {
+	padding: 64px 0 72px;
+	border-bottom: 1px solid var(--rule);
+}
 
-	<section class="services" id="services">
-		<div class="wrap">
-			<h2>What we teach</h2>
+.hero-grid {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	gap: 56px;
+	align-items: start;
+}
 
-			<div class="service-block">
-				<div class="service-head">
-					<h3>Group &amp; private tutorials</h3>
-					<p class="service-sub">Common Core through AP · English composition</p>
-				</div>
-				<div class="service-body">
-					<p>Our English program builds the reading and writing skills that carry through every other subject: grammar, vocabulary, essay composition, reading comprehension, and in-class discussion, with samples sent home so parents can see the actual work.</p>
-					<p>Our Common Core 7 and 8 math sequence builds the algebra foundation students need before Algebra 1 — especially translating word problems into equations, a skill most students never get formal practice with at school. Private one-on-one sessions are available for any subject when a student needs pacing a group class can't offer.</p>
-				</div>
-			</div>
+.kicker {
+	font-family: var(--font-body);
+	color: var(--gold);
+	font-weight: 600;
+	font-size: 0.95rem;
+	margin-bottom: 14px;
+}
 
-			<div class="service-block">
-				<div class="service-head">
-					<h3>Standardized test prep</h3>
-					<p class="service-sub">SAT · SAT II Math, Chemistry, Biology, Physics · AP</p>
-				</div>
-				<div class="service-body">
-					<p>SAT prep covers Critical Reading, Writing, and Math using our own "information box" method for breaking down word problems, plus weekly mock tests scored and reported back like the real thing. SAT II Math II is our strongest subject test — students walk in already familiar with the exact question types they'll see.</p>
-					<p>Every class runs on weekly homework, quizzes, and progress reports emailed to parents — SAT I classes get at least two reports a week — so a struggling topic gets caught long before test day, not after.</p>
-				</div>
-			</div>
+.hero-lede {
+	font-size: 1.15rem;
+	color: var(--ink-soft);
+	max-width: 46ch;
+	margin-top: 20px;
+}
 
-			<div class="service-block">
-				<div class="service-head">
-					<h3>College application services</h3>
-					<p class="service-sub">Essay coaching · one-on-one counseling · UC GPA planning</p>
-				</div>
-				<div class="service-body">
-					<p>Our counselors work one-on-one on personal statements and supplemental essays until they sound like the student, not a template — most well-prepared students only need a few hours of editing once the ideas are there. We also help families understand mechanics that colleges rarely explain clearly, like how the UC system calculates GPA from "a-g" courses in grades 10 and 11.</p>
-					<p>Register early and use the Early Bird discount on one-on-one counseling — the first meeting is scheduled within seven business days of registration, or the service is fully refundable.</p>
-				</div>
-			</div>
-		</div>
-	</section>
+.hero-actions {
+	display: flex;
+	gap: 14px;
+	margin-top: 32px;
+	flex-wrap: wrap;
+}
 
-	<section class="results" id="results">
-		<div class="wrap">
-			<h2>Twenty years of report cards</h2>
-			<div class="quote-grid">
-				<blockquote>
-					<p>Came in scoring in the low 600s on SAT math, nervous about the subject. Left with a 790 on the math section and an 800 on the Math IIC subject test, and is now in Brown's eight-year liberal arts and medical program.</p>
-					<cite>Vyvy T. — Brown University</cite>
-				</blockquote>
-				<blockquote>
-					<p>Started AP Calculus BC with a B-/C+ and finished the year at an A-, in a class of about five students where every question got answered before it became a problem.</p>
-					<cite>Cheryl S.</cite>
-				</blockquote>
-				<blockquote>
-					<p>Four years of classes turned a B- average into the top 4% of the class, with SAT scores that went from 1110 to 1410 along the way.</p>
-					<cite>Andrew H. — UC Davis</cite>
-				</blockquote>
-			</div>
-		</div>
-	</section>
+.btn {
+	display: inline-block;
+	padding: 13px 24px;
+	border-radius: 3px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.98rem;
+	border: 1px solid transparent;
+}
 
-	<section class="visit" id="visit">
-		<div class="wrap visit-grid">
-			<div>
-				<h2>Visit or call</h2>
-				<p class="visit-lede">Free initial consultation, appointment-only tutoring, and a fall schedule that's already filling up.</p>
-				<address>
-					46260 Warm Springs Blvd., #505<br>
-					Fremont, CA 94539<br>
-					<a href="tel:5106680801">510-668-0801</a><br>
-					<a href="tel:5103649201">510-364-9201</a>
-				</address>
-			</div>
-			<div class="visit-links">
-				<div>
-					<h3>Useful links</h3>
-					<ul>
-						<li><a href="https://www.collegeboard.org/" target="_blank" rel="noopener">CollegeBoard</a></li>
-						<li><a href="http://www.actstudent.org/" target="_blank" rel="noopener">ACT</a></li>
-						<li><a href="http://apcentral.collegeboard.com/apc/Controller.jpf" target="_blank" rel="noopener">AP Central</a></li>
-					</ul>
-				</div>
-				<div>
-					<h3>College links</h3>
-					<ul>
-						<li><a href="http://www.universityofcalifornia.edu/" target="_blank" rel="noopener">University of California</a></li>
-						<li><a href="http://www.calstate.edu/" target="_blank" rel="noopener">California State University</a></li>
-						<li><a href="http://www.scu.edu/" target="_blank" rel="noopener">Santa Clara University</a></li>
-						<li><a href="http://www.stanford.edu/" target="_blank" rel="noopener">Stanford University</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+.btn-primary {
+	background: var(--pine);
+	color: var(--paper-raised);
+}
+.btn-primary:hover { background: #17453d; }
 
-</main>
+.btn-ghost {
+	border-color: var(--ink);
+	color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper-raised); }
 
-<footer class="site-footer">
-	<div class="wrap footer-row">
-		<p>© 2026 MT Learning Center. All rights reserved.</p>
-		<p class="footer-address">46260 Warm Springs Blvd., #505, Fremont, CA 94539</p>
-	</div>
-</footer>
+.index-card {
+	background: var(--paper-raised);
+	border: 1px solid var(--rule-strong);
+	border-radius: 2px;
+	padding: 28px 26px;
+	box-shadow: 4px 4px 0 var(--rule);
+}
 
-</body>
-</html>
+.index-card-label {
+	font-family: var(--font-display);
+	font-style: italic;
+	color: var(--ink-soft);
+	font-size: 0.95rem;
+	margin: 0 0 16px;
+	padding-bottom: 12px;
+	border-bottom: 1px dashed var(--rule-strong);
+}
+
+.index-card dl { margin: 0; }
+.index-card dl div {
+	padding: 10px 0;
+	border-bottom: 1px solid var(--rule);
+}
+.index-card dl div:last-child { border-bottom: none; }
+
+.index-card dt {
+	font-size: 0.8rem;
+	color: var(--ink-soft);
+	margin: 0 0 2px;
+}
+.index-card dd {
+	margin: 0;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+/* ---------- philosophy ---------- */
+
+.philosophy {
+	padding: 68px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.philosophy-grid {
+	display: grid;
+	grid-template-columns: 0.8fr 1.2fr;
+	gap: 48px;
+}
+
+.philosophy-text {
+	border-left: 3px solid var(--gold);
+	padding-left: 28px;
+	color: var(--ink-soft);
+	font-size: 1.08rem;
+}
+
+/* ---------- instructors ---------- */
+
+.instructors {
+	padding: 68px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.section-lede {
+	color: var(--ink-soft);
+	max-width: 56ch;
+	margin-top: -8px;
+	margin-bottom: 36px;
+}
+
+.roster { border-top: 1px solid var(--rule); }
+
+.roster-row {
+	border-bottom: 1px solid var(--rule);
+}
+
+.roster-row summary {
+	list-style: none;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 1.1fr 1.1fr 1.3fr auto;
+	gap: 16px;
+	align-items: baseline;
+	padding: 18px 4px;
+}
+.roster-row summary::-webkit-details-marker { display: none; }
+
+.roster-row summary::after {
+	content: "+";
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	color: var(--gold);
+	justify-self: end;
+}
+.roster-row[open] summary::after { content: "–"; }
+
+.roster-name {
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 1.08rem;
+}
+
+.roster-subject { color: var(--pine); font-size: 0.95rem; }
+.roster-credential { color: var(--ink-soft); font-size: 0.9rem; }
+
+.roster-row p {
+	padding: 0 4px 22px;
+	max-width: 68ch;
+	color: var(--ink-soft);
+}
+
+/* ---------- services ---------- */
+
+.services {
+	padding: 68px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.service-block {
+	display: grid;
+	grid-template-columns: 0.8fr 1.2fr;
+	gap: 32px;
+	padding: 32px 0;
+	border-top: 1px solid var(--rule);
+}
+.service-block:last-child { border-bottom: none; }
+
+.service-sub { color: var(--gold); font-size: 0.95rem; margin-top: 6px; }
+
+.service-body p { color: var(--ink-soft); }
+
+/* ---------- results ---------- */
+
+.results {
+	padding: 68px 0;
+	border-bottom: 1px solid var(--rule);
+}
+
+.quote-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 32px;
+	margin-top: 32px;
+}
+
+.quote-grid blockquote {
+	margin: 0;
+	padding-top: 18px;
+	border-top: 3px solid var(--gold);
+}
+
+.quote-grid p {
+	font-family: var(--font-display);
+	font-size: 1.15rem;
+	color: var(--ink);
+	margin-bottom: 14px;
+}
+
+.quote-grid cite {
+	font-style: normal;
+	color: var(--ink-soft);
+	font-size: 0.9rem;
+}
+
+/* ---------- visit ---------- */
+
+.visit { padding: 68px 0 76px; }
+
+.visit-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 48px;
+}
+
+.visit-lede { color: var(--ink-soft); max-width: 46ch; }
+
+address {
+	font-style: normal;
+	margin-top: 24px;
+	line-height: 1.9;
+}
+address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
+
+.visit-links {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+}
+
+.visit-links h3 { font-size: 1rem; margin-bottom: 12px; }
+.visit-links ul { list-style: none; margin: 0; padding: 0; }
+.visit-links li { margin-bottom: 8px; }
+.visit-links a { color: var(--ink-soft); text-decoration: none; }
+.visit-links a:hover { color: var(--pine); }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+	background: var(--ink);
+	color: #B9C2C6;
+	padding: 22px 0;
+	font-size: 0.85rem;
+}
+.footer-row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+.footer-row p { margin: 0; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+	.hero-grid, .philosophy-grid, .service-block, .visit-grid {
+		grid-template-columns: 1fr;
+	}
+	.quote-grid { grid-template-columns: 1fr; }
+	.philosophy-text { padding-left: 20px; }
+
+	.nav-toggle-label { display: block; }
+
+	.site-nav {
+		display: none;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: var(--paper);
+		border-bottom: 1px solid var(--rule);
+		padding: 8px 28px 20px;
+	}
+	.nav-toggle-input:checked ~ .site-nav { display: flex; }
+	.site-nav a { padding: 8px 0; width: 100%; }
+	.nav-phone { margin-top: 8px; }
+}
+
+@media (max-width: 600px) {
+	.roster-row summary {
+		grid-template-columns: 1fr auto;
+		grid-template-areas:
+			"name plus"
+			"subject subject"
+			"cred cred";
+	}
+	.roster-name { grid-area: name; }
+	.roster-row summary::after { grid-area: plus; }
+	.roster-subject { grid-area: subject; }
+	.roster-credential { grid-area: cred; }
+}
