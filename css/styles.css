@@ -456,24 +456,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 
 .visit-lede { color: var(--ink-soft); max-width: 46ch; }
 
+.visit-contact { padding-top: 8px; }
+
 address {
 	font-style: normal;
-	margin-top: 24px;
+	margin-top: 0;
 	line-height: 1.9;
 }
 address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
-
-.visit-links {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 24px;
-}
-
-.visit-links h3 { font-size: 1rem; margin-bottom: 12px; }
-.visit-links ul { list-style: none; margin: 0; padding: 0; }
-.visit-links li { margin-bottom: 8px; }
-.visit-links a { color: var(--ink-soft); text-decoration: none; }
-.visit-links a:hover { color: var(--pine); }
 
 /* ---------- footer ---------- */
 
