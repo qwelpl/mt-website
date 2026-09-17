@@ -242,6 +242,78 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	color: var(--ink);
 }
 
+.registration {
+	padding: 18px 0 72px;
+}
+
+.registration-grid {
+	display: grid;
+	grid-template-columns: 1.4fr 0.9fr;
+	gap: 38px;
+	align-items: start;
+}
+
+.registration-copy {
+	padding: 26px 0 0;
+}
+
+.registration-page {
+	padding: 36px 0 40px;
+}
+
+.registration-page-grid {
+	display: grid;
+	grid-template-columns: 1.4fr 0.9fr;
+	gap: 38px;
+	align-items: start;
+}
+
+.registration-page-copy {
+	padding: 8px 0 0;
+}
+
+.registration-list {
+	margin: 20px 0 0;
+	padding-left: 1.1rem;
+	color: var(--ink-soft);
+	line-height: 1.9;
+}
+
+.registration-card {
+	background: var(--paper-raised);
+	border: 1px solid var(--rule-strong);
+	border-radius: 2px;
+	padding: 28px 26px;
+	box-shadow: 4px 4px 0 var(--rule);
+}
+
+.registration-card dl { margin: 0; }
+.registration-card dl div {
+	padding: 10px 0;
+	border-bottom: 1px solid var(--rule);
+}
+.registration-card dl div:last-child { border-bottom: none; }
+
+.registration-card dt {
+	font-size: 0.8rem;
+	color: var(--ink-soft);
+	margin: 0 0 2px;
+}
+.registration-card dd {
+	margin: 0;
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.registration-form-wrap {
+	padding: 0 0 72px;
+}
+
+.registration-form-wrap iframe {
+	border: 1px solid var(--rule-strong);
+	background: var(--paper-raised);
+}
+
 /* ---------- home quick links ---------- */
 
 .quick-links {
@@ -625,7 +697,7 @@ address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid v
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
-	.hero-grid, .philosophy-grid, .service-block, .visit-grid {
+	.hero-grid, .philosophy-grid, .service-block, .visit-grid, .registration-grid, .registration-page-grid {
 		grid-template-columns: 1fr;
 	}
 	.quick-link-grid { grid-template-columns: 1fr; }
