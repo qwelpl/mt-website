@@ -256,6 +256,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	grid-template-columns: repeat(3, 1fr);
 	gap: 24px;
 }
+.quick-link-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.quick-link-grid, .quick-link-grid-4 { grid-template-columns: 1fr; }
+
 
 .quick-link-card {
 	display: block;
@@ -662,4 +666,57 @@ address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid v
 	.roster-row summary::after { grid-area: plus; }
 	.roster-subject { grid-area: subject; }
 	.roster-credential { grid-area: cred; }
+}
+
+
+/* ---------- schedule & rates ---------- */
+
+.rate-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	margin-top: 28px;
+}
+
+.rate-card {
+	background: var(--paper-raised);
+	border: 1px solid var(--rule-strong);
+	border-radius: 2px;
+	padding: 24px 26px;
+}
+.rate-card h4 { margin-bottom: 6px; }
+.rate-card .rate-price {
+	font-family: var(--font-display);
+	font-size: 1.6rem;
+	color: var(--pine);
+	margin-bottom: 10px;
+}
+.rate-card p.rate-note { color: var(--ink-soft); font-size: 0.9rem; margin: 0; }
+
+.pdf-list {
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+.pdf-list li {
+	border-bottom: 1px solid var(--rule);
+	padding: 12px 0;
+}
+.pdf-list li:first-child { border-top: 1px solid var(--rule); }
+.pdf-list a {
+	text-decoration: none;
+	color: var(--ink);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.pdf-list a:hover { color: var(--pine); }
+.pdf-list a::before {
+	content: "↓";
+	color: var(--gold);
+	font-weight: 600;
+}
+
+@media (max-width: 700px) {
+	.rate-grid { grid-template-columns: 1fr; }
 }

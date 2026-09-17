@@ -1,3 +1,16 @@
+// Highlight the current page in the nav based on the URL.
+document.addEventListener("DOMContentLoaded", function () {
+	var path = window.location.pathname.split("/").pop() || "index.html";
+	document.querySelectorAll(".site-nav a").forEach(function (link) {
+		var href = link.getAttribute("href");
+		if (href === path) {
+			link.classList.add("is-current");
+		} else {
+			link.classList.remove("is-current");
+		}
+	});
+});
+
 // Close the mobile nav after tapping a link.
 document.addEventListener("DOMContentLoaded", function () {
 	var toggle = document.getElementById("nav-toggle");
