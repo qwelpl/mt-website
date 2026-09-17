@@ -38,7 +38,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: var(--font-display);
 	color: var(--ink);
 	line-height: 1.1;
@@ -49,6 +49,7 @@ h1, h2, h3 {
 h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 600; }
 h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
 h3 { font-size: 1.25rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
 
 p { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
@@ -115,6 +116,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	font-size: 0.95rem;
 }
 .site-nav a:hover { color: var(--pine); }
+.site-nav a.is-current { color: var(--pine); font-weight: 600; }
 
 .nav-phone {
 	color: var(--pine) !important;
@@ -166,41 +168,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	font-weight: 600;
 	font-size: 0.95rem;
 	margin-bottom: 14px;
-}
-
-.kicker-row {
-	display: flex;
-	align-items: center;
-	gap: 14px;
-	margin-bottom: 14px;
-}
-.kicker-row .kicker { margin-bottom: 0; }
-
-.est-badge {
-	display: inline-flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	width: 52px;
-	height: 52px;
-	flex-shrink: 0;
-	border: 1px dashed var(--rule-strong);
-	border-radius: 50%;
-	transform: rotate(-6deg);
-	color: var(--gold);
-}
-.est-badge-label {
-	font-size: 0.6rem;
-	letter-spacing: 0.12em;
-	text-transform: uppercase;
-	line-height: 1;
-}
-.est-badge-year {
-	font-family: var(--font-display);
-	font-size: 0.95rem;
-	font-weight: 700;
-	line-height: 1;
-	margin-top: 3px;
 }
 
 .hero-lede {
@@ -275,6 +242,51 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	color: var(--ink);
 }
 
+/* ---------- home quick links ---------- */
+
+.quick-links {
+	padding: 68px 0 76px;
+}
+
+.quick-links h2 { margin-bottom: 8px; }
+.quick-links > .wrap > p { color: var(--ink-soft); max-width: 60ch; margin-bottom: 36px; }
+
+.quick-link-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+.quick-link-card {
+	display: block;
+	text-decoration: none;
+	background: var(--paper-raised);
+	border: 1px solid var(--rule-strong);
+	border-radius: 2px;
+	padding: 28px;
+	color: var(--ink);
+}
+.quick-link-card:hover { border-color: var(--pine); }
+
+.quick-link-card h3 { margin-bottom: 8px; }
+.quick-link-card p { color: var(--ink-soft); font-size: 0.95rem; margin: 0; }
+.quick-link-card span.go {
+	display: inline-block;
+	margin-top: 14px;
+	color: var(--pine);
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+/* ---------- page header (non-home pages) ---------- */
+
+.page-header {
+	padding: 56px 0 40px;
+	border-bottom: 1px solid var(--rule);
+}
+.page-header .kicker { margin-bottom: 10px; }
+.page-header p.lede { color: var(--ink-soft); max-width: 60ch; font-size: 1.08rem; margin-top: 14px; }
+
 /* ---------- testimonials ---------- */
 
 .testimonials {
@@ -341,7 +353,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	line-height: 1;
 	padding: 5px;
 }
-.testimonial-dots { display: flex; gap: 8px; }
+.testimonial-dots { display: flex; gap: 8px; flex-wrap: wrap; }
 .testimonial-dot {
 	width: 8px;
 	height: 8px;
@@ -426,11 +438,71 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 	color: var(--ink-soft);
 }
 
-/* ---------- services ---------- */
+/* ---------- services / curriculum ---------- */
 
 .services {
 	padding: 68px 0;
 	border-bottom: 1px solid var(--rule);
+}
+
+.subject-group {
+	padding: 44px 0;
+	border-top: 1px solid var(--rule);
+}
+.subject-group:first-of-type { border-top: none; padding-top: 12px; }
+
+.subject-group > h3 {
+	font-size: 1.5rem;
+	margin-bottom: 6px;
+}
+.subject-group > p.subject-intro {
+	color: var(--ink-soft);
+	max-width: 68ch;
+	margin-bottom: 28px;
+}
+
+.course-row {
+	border-bottom: 1px solid var(--rule);
+}
+.course-row summary {
+	list-style: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 16px;
+	padding: 14px 4px;
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 1.02rem;
+}
+.course-row summary::-webkit-details-marker { display: none; }
+.course-row summary::after {
+	content: "+";
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	color: var(--gold);
+	font-weight: 400;
+}
+.course-row[open] summary::after { content: "–"; }
+
+.course-body { padding: 0 4px 24px; }
+.course-body p { color: var(--ink-soft); max-width: 68ch; }
+
+.topic-list {
+	margin: 14px 0 0;
+	padding-left: 18px;
+	columns: 2;
+	column-gap: 32px;
+	color: var(--ink-soft);
+	font-size: 0.92rem;
+}
+.topic-list li { break-inside: avoid; margin-bottom: 4px; }
+
+.course-note {
+	font-size: 0.85rem;
+	color: var(--gold);
+	margin-top: 12px;
 }
 
 .service-block {
@@ -445,6 +517,24 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .service-sub { color: var(--gold); font-size: 0.95rem; margin-top: 6px; }
 
 .service-body p { color: var(--ink-soft); }
+
+/* ---------- subject sub-nav (within What We Teach) ---------- */
+
+.subject-nav {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin: 28px 0 8px;
+}
+.subject-nav a {
+	text-decoration: none;
+	color: var(--ink);
+	border: 1px solid var(--rule-strong);
+	padding: 8px 16px;
+	border-radius: 20px;
+	font-size: 0.9rem;
+}
+.subject-nav a:hover { border-color: var(--pine); color: var(--pine); }
 
 /* ---------- results ---------- */
 
@@ -500,6 +590,18 @@ address {
 }
 address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong); }
 
+.visit-links {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+	margin-top: 32px;
+}
+.visit-links h3 { font-size: 1rem; margin-bottom: 12px; }
+.visit-links ul { list-style: none; margin: 0; padding: 0; }
+.visit-links li { margin-bottom: 8px; }
+.visit-links a { color: var(--ink-soft); text-decoration: none; }
+.visit-links a:hover { color: var(--pine); }
+
 /* ---------- footer ---------- */
 
 .site-footer {
@@ -522,9 +624,11 @@ address a { color: var(--ink); text-decoration: none; border-bottom: 1px solid v
 	.hero-grid, .philosophy-grid, .service-block, .visit-grid {
 		grid-template-columns: 1fr;
 	}
+	.quick-link-grid { grid-template-columns: 1fr; }
 	.testimonial-layout { grid-template-columns: 1fr; gap: 28px; }
 	.quote-grid { grid-template-columns: 1fr; }
 	.philosophy-text { padding-left: 20px; }
+	.topic-list { columns: 1; }
 
 	.nav-toggle-label { display: block; }
 
